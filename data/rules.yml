@@ -1,0 +1,39 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say 'Hello' anytime the user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say who am i anytime the user asks
+  steps:
+  - intent: whoami
+  - action: utter_iamabot
+
+- rule: Say who is the prettier anytime the user asks
+  steps:
+  - intent: prettiest
+  - action: utter_prettiest
+
+- rule: Say how am i anytime the user asks
+  steps:
+  - intent: how_am_i
+  - action: utter_how_am_i
+
+- rule: Say a recipe anytime the user gives ingredients
+  steps:
+  - intent: ingredients
+  - action: action_suggest_recipes
+

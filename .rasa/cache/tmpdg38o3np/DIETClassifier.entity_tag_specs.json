@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-ingredientes",
+      "2": "I-ingredientes",
+      "3": "L-ingredientes",
+      "4": "U-ingredientes",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-ingredientes": 1,
+      "I-ingredientes": 2,
+      "L-ingredientes": 3,
+      "U-ingredientes": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

@@ -1,0 +1,58 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: cutest path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prettiest
+  - action: utter_prettiest
+
+- story: suggest recipes path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ingredients
+  - action: action_suggest_recipes
+  - intent: affirm
+  - action: utter_happy
+
+- story: suggest recipes path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_am_i
+  - action: utter_how_am_i
+  - intent: ingredients
+  - action: action_suggest_recipes
+  - intent: affirm
+  - action: utter_happy
+

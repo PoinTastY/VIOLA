@@ -1,0 +1,132 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hola amigo
+    - como estas
+    - buen dia
+    - buenas tardes
+    - hola
+    - que onda
+    - que tal
+    - que hay
+    - que pasa
+    - que hubo
+    - como estas
+
+- intent: goodbye
+  examples: |
+    - adios
+    - bye
+    - bai
+    - buenas noches
+    - hasta pronto
+    - hasta luego
+    - ten un buen dia
+    - te veo despues
+    - nos vemos
+    - chao
+
+- intent: affirm
+  examples: |
+    - si
+    - yes
+    - si
+    - de hecho
+    - claro
+    - suena bien
+    - correcto
+    - por supuesto
+    - absolutamente
+    - definitivamente
+    - estoy de acuerdo
+    - sí, por favor
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nunca
+    - no lo creo
+    - no me gusta
+    - no puede ser
+    - no es cierto
+    - falso
+
+- intent: mood_great
+  examples: |
+    - perfecto
+    - bien
+    - excelente
+    - fabuloso
+    - asombroso
+    - me siento muy bien
+    - soy genial
+    - soy cool
+    - voy a salvar el mundo
+    - extremadamente bueno
+    - muy feliz
+    - gracias
+
+- intent: mood_unhappy
+  examples: |
+    - triste
+    - estoy triste
+    - no me siento bien
+    - estoy decepcionado
+    - tragico
+    - muy triste
+    - llorar
+    - no estoy feliz
+    - in feliz
+    - no estoy bien
+    - extremadamente triste
+    - sad
+
+- intent: bot_challenge
+  examples: |
+    - eres un bot?
+    - eres humana?
+    - estoy hablando con un bot?
+    - estoy hablando con un humano?
+
+- intent: prettiest
+  examples: |
+    - quien es la mas bonita?
+    - quien es la mas guapa?
+    - quien es la mas hermosa?
+    - quien es la mas bella?
+    - quien es la mas linda?
+    - define belleza
+
+- intent: whoami
+  examples: |
+    - quien eres?
+    - quien eres tu?
+    - como te llamas?
+    - que puedes hacer?
+    - que eres?
+
+- intent: how_am_i
+  examples: |
+    - como estas?
+    - y tu?
+    - como te sientes?
+    - como te ves?
+    - como te encuentras?
+    - como te sientes hoy?
+    - como te sientes ahora?
+    - que tal tu?
+
+- intent: ingredients
+  examples: |
+    - tengo estos ingredientes: [maruchan](ingredient), [agua](ingredient), [limón](ingredient)
+    - tengo [agua](ingredient), [maruchan](ingredient), [frijoles](ingredient)
+    - los ingredientes son: [arroz](ingredient), [pollo](ingredient)
+
+
+

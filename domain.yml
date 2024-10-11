@@ -1,0 +1,81 @@
+version: "3.1"
+
+name: VIOLA
+creator: Kevin
+
+slots:
+  ingredients:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: ingredient
+
+entities:
+  - ingredient
+
+intents:
+  - greet
+  - goodbye
+  - how_am_i
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ingredients
+  - suggest_recipe
+  - choose_recipe
+  - recipe_instructions
+  - prettiest
+  - whoami
+
+actions:
+  - action_suggest_recipes
+
+responses:
+  utter_greet:
+  - text: "Hola, como estas?"
+
+  utter_cheer_up:
+  - text: "Aqui tienes algo para animarte:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Te sirvio?"
+  - text: "Te fue util?"
+  - text: "Te ayudo?"
+  - text: "Te gusto?"
+
+  utter_happy:
+  - text: "Excelente, me alegra escuchar eso!"
+  - text: "Genial, me alegra escuchar eso!"
+  - text: "Fabuloso, me alegra escuchar eso!"
+  - text: "Asombroso, me alegra escuchar eso!"
+  - text: "Bien por ti!"
+  - text: "Que bueno!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Hasta luego"
+  - text: "Adios"
+  - text: "Te me cuidas"
+
+  utter_iamabot:
+  - text: "Soy VIOLA, actualment soy un bot, pero estoy aprendiendo a ser mas util"
+  - text: "Soy VIOLA, un bot creado por Kevin"
+
+  utter_prettiest:
+  - text: "La persona mas bonita es Carmen <3"
+  - text: "Carmen es la mas bonita"
+  - text: "Carmen es la mas bonita de todas"
+
+  utter_how_am_i:
+  - text: "Siempre estoy bien, gracias por preguntar"
+  - text: "Estoy bien, gracias por preguntar"
+  - text: "Estoy listo para ayudarte, necesitas una receta?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
