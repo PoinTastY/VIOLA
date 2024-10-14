@@ -127,6 +127,3 @@ nlu:
     - tengo estos ingredientes: [maruchan](ingredient), [agua](ingredient), [limón](ingredient)
     - tengo [agua](ingredient), [maruchan](ingredient), [frijoles](ingredient)
     - los ingredientes son: [arroz](ingredient), [pollo](ingredient)
-
-
-
