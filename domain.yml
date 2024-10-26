@@ -36,6 +36,9 @@ actions:
 responses:
   utter_greet:
   - text: "Hola, como estas?"
+  - text: "Hola, como te encuentras?"
+  - text: "Hola, como puedo ayudarte hoy?"
+  - text: "Que tenemos para cocinar hoy"
 
   utter_cheer_up:
   - text: "Aqui tienes algo para animarte:"
@@ -60,10 +63,11 @@ responses:
   - text: "Hasta luego"
   - text: "Adios"
   - text: "Te me cuidas"
+  - text: "Bye, y recuerda, cualquiera puede cocinar."
 
   utter_iamabot:
   - text: "Soy VIOLA, actualment soy un bot, pero estoy aprendiendo a ser mas util"
-  - text: "Soy VIOLA, un bot creado por Kevin"
+  - text: "Soy VIOLA, un bot creado por el quevin"
 
   utter_prettiest:
   - text: "La persona mas bonita es Carmen <3"
