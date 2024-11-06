@@ -1,18 +1,32 @@
 version: "3.1"
 
-name: VIOLA
-creator: Kevin
-
 slots:
-  ingredients:
-    type: list
-    influence_conversation: false
+  career:
+    type: text
+    influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: ingredient
+      - type: from_entity
+        entity: career
+
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+
+  number:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: number
+    
 
 entities:
-  - ingredient
+  - career
+  - name
+  - number
 
 intents:
   - greet
@@ -29,16 +43,18 @@ intents:
   - recipe_instructions
   - prettiest
   - whoami
+  - phone_number
+  - my_name
+  - inform_career
 
 actions:
-  - action_suggest_recipes
+  - action_recommend_components
 
 responses:
   utter_greet:
   - text: "Hola, como estas?"
   - text: "Hola, como te encuentras?"
   - text: "Hola, como puedo ayudarte hoy?"
-  - text: "Que tenemos para cocinar hoy"
 
   utter_cheer_up:
   - text: "Aqui tienes algo para animarte:"
@@ -46,9 +62,9 @@ responses:
 
   utter_did_that_help:
   - text: "Te sirvio?"
-  - text: "Te fue util?"
-  - text: "Te ayudo?"
-  - text: "Te gusto?"
+  - text: "Te fue util la informacion que te proporcione?"
+  - text: "Te fue de ayuda?"
+  - text: "Te parecio bien la info que te di?"
 
   utter_happy:
   - text: "Excelente, me alegra escuchar eso!"
@@ -64,10 +80,14 @@ responses:
   - text: "Adios"
   - text: "Te me cuidas"
   - text: "Bye, y recuerda, cualquiera puede cocinar."
+  - text: "Hasta luego, y recuerda, si me necesitas, siempre estare para ti :)."
 
   utter_iamabot:
   - text: "Soy VIOLA, actualment soy un bot, pero estoy aprendiendo a ser mas util"
   - text: "Soy VIOLA, un bot creado por el quevin"
+  - text: "Hola, soy VIOLA, desarrollada con Rasa Opensource, por ahora te puedo ayudar a elegir la compu para tu carrera, pero estoy aprendiendo a ser cada vez mas util :)"
+  - text: "Mi nombre es VIOLA"
+  - text: "VIOLA, un gusto conocerte :)"
 
   utter_prettiest:
   - text: "La persona mas bonita es Carmen <3"
@@ -75,10 +95,19 @@ responses:
   - text: "Carmen es la mas bonita de todas"
 
   utter_how_am_i:
-  - text: "Siempre estoy bien, gracias por preguntar"
-  - text: "Estoy bien, gracias por preguntar"
-  - text: "Estoy listo para ayudarte, necesitas una receta?"
+  - text: "Siempre estoy bien, en que te puedo ayudar?"
+  - text: "Estoy bien, y tu?"
+  - text: "Estoy lista para ayudarte, necesitas informacion sobre componentes de computadora?"
 
+  utter_my_name:
+  - text: "Como te llamas?"
+  - text: "Cual es tu nombre?"
+
+  utter_phone_number:
+  - text: "Cual es tu numero de telefono?"
+
+  utter_thanks:
+  - text: "Gracias por proporcionar esa informacion :)"
 
 session_config:
   session_expiration_time: 60

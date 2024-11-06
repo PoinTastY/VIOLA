@@ -29,6 +29,22 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: Happy name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: whoami
+  - action: utter_iamabot
+  - action: utter_my_name
+  - intent: my_name
+    entities:
+      - name: "Kevin"
+  - action: utter_phone_number
+  - intent: phone_number
+    entities:
+      - number: "3333991900"
+  - action: utter_thanks
+
 - story: cutest path
   steps:
   - intent: greet
@@ -36,23 +52,9 @@ stories:
   - intent: prettiest
   - action: utter_prettiest
 
-- story: suggest recipes path
+- story: El usuario menciona su carrera
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ingredients
-  - action: action_suggest_recipes
-  - intent: affirm
-  - action: utter_happy
-
-- story: suggest recipes path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: how_am_i
-  - action: utter_how_am_i
-  - intent: ingredients
-  - action: action_suggest_recipes
-  - intent: affirm
-  - action: utter_happy
-
+  - intent: inform_career
+  - slot_was_set:
+    - career: "Ingenieria de Sistemas"
+  - action: action_recommend_components

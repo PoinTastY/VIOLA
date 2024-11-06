@@ -17,23 +17,14 @@ rules:
   - intent: greet
   - action: utter_greet
 
-- rule: Say who am i anytime the user asks
-  steps:
-  - intent: whoami
-  - action: utter_iamabot
-
 - rule: Say who is the prettier anytime the user asks
   steps:
   - intent: prettiest
   - action: utter_prettiest
 
-- rule: Say how am i anytime the user asks
+- rule: Respuesta recomendación personalizada
+  condition:
+  - slot_was_set:
+      - career
   steps:
-  - intent: how_am_i
-  - action: utter_how_am_i
-
-- rule: Say a recipe anytime the user gives ingredients
-  steps:
-  - intent: ingredients
-  - action: action_suggest_recipes
-
+  - action: action_recommend_components

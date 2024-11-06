@@ -17,6 +17,7 @@ nlu:
     - que pasa
     - que hubo
     - como estas
+    - hola VIOLA
 
 - intent: goodbye
   examples: |
@@ -30,6 +31,7 @@ nlu:
     - te veo despues
     - nos vemos
     - chao
+
 
 - intent: affirm
   examples: |
@@ -110,6 +112,28 @@ nlu:
     - como te llamas?
     - que puedes hacer?
     - que eres?
+    - hablame de ti
+    - cuentame de ti
+    - dime como te llamas
+    - dime tu nombre
+    - cual es tu nombre
+
+- intent: my_name
+  examples: |
+    - mi nombre es [Kevin](name)
+    - mi nombre es [Carmen](name)
+    - mi nombre es [Collette](name)
+    - [Kevin](name) es mi nombre
+    - [Carmen](name) es mi nombre
+    - me llamo [Carmen](name)
+    - me llamo [Collette](name)
+
+- intent: phone_number
+  examples: |
+    - mi telefono es [3333991900](number)
+    - [3333991900](number)
+    - [3333991900](number) es mi numero
+    - mi celular es [3333991900](number)
 
 - intent: how_am_i
   examples: |
@@ -122,8 +146,110 @@ nlu:
     - como te sientes ahora?
     - que tal tu?
 
-- intent: ingredients
+- intent: inform_career
   examples: |
-    - tengo estos ingredientes: [maruchan](ingredient), [agua](ingredient), [limón](ingredient)
-    - tengo [agua](ingredient), [maruchan](ingredient), [frijoles](ingredient)
-    - los ingredientes son: [arroz](ingredient), [pollo](ingredient)
+    - Estudio [Ingenieria en Sistemas](career)
+    - Estudio [Ingenieria en Informatica](career)
+    - Estudio [Ingenieria de Software](career)
+    - Estudio [Ingenieria en Computacion](career)
+    - Estudio [Ingenieria en Telecomunicaciones](career)
+    - Estoy estudiando [Ingenieria en Telecomunicaciones](career)
+    - Quiero estudiar [Diseño Grafico](career)
+    - Quiero estudiar [Diseño Grafico](career)
+    - Quiero estudiar [Cine](career)
+    - quiero estudiar [Cine](career)
+    - quiero ser [Cine](career)
+    - Mi carrera es [Arquitectura](career)
+    - Soy estudiante de [Medicina](career)
+    - Estudio [Economia](career)
+    - Estoy cursando [Psicologia](career)
+    - Tengo la carrera de [Odontologia](career)
+    - Estoy cursando [Economia](career)
+    - Soy Licenciado en [Administracion de empresas](career)
+    - Tengo una licenciatura en [Ingenieria en sistemas](career)
+    - Estudio Licenciatura en [Matematicas](career)
+    - Quiero estudiar [Gastronomia](career)
+    - Quiero ser [Oftanmologo](career)
+    - Quiero ser [Fisico](career)
+    - Quiero estudiar [Cine](career)
+    - Quiero ser [Cine](career)
+    - Quiero ser [Ingenieria en Computacion](career)
+    - Estudio la carrera de [Ingenieria en Computacion](career)
+    - Quiero dedicarme al [Cine](career)
+    - Quiero dedicarme a la [Cine](career)
+
+# IMPLEMENTAR SINONIMOS SIMPLES AQUI, PERO LAS NORMALIZACIONES, EN CODE BEHINF
+synonyms:
+  Cine:
+    - cine
+    - sine
+    - industria del cine
+    - cineasta
+
+  Ingenieria en Computacion:
+    - ingenieria en computacion
+    - ingenieria en computo
+    - ingenieria de computo
+    - ingenieria de computacion
+    - ingenieria computo
+    - ingeniero en computacion
+    - ing en computacion
+    - computacion
+    - compu
+    - hacker
+
+  Ingenieria en Sistemas:
+    - ingenieria en sistemas
+    - ingenieria de sistemas
+    - sistemas
+    - sistemas computacionales
+    - ingenieria sistemas
+    - ingenieria en sistemas computacionales
+    - ingenieria sistemas computacionales
+    - sistemas compu
+    - ing en sistemas
+    - sistmas computacionales
+    - sistemas computacion
+    - sistemas compiutacionales # errores tipográficos comunes
+    - sistems computacionales
+    - Sistemas
+
+  Diseño Grafico:
+    - diseño grafico
+    - diseno grafico
+    - diseño grafic
+    - diseno grafic
+    - diseño gráfico
+    - diseño graficos
+    - diseno graficos
+
+  Medicina:
+    - medicina
+    - medicna
+    - medcina
+    - mediicina
+    - medcina
+
+  Economia:
+    - economia
+    - economía
+    - econmia
+    - econoimia
+    - ecónomia
+    - ecnoomia
+
+  Arquitectura:
+    - arquitectura
+    - arqutiectura
+    - arqiutectura
+    - arquitctura
+    - arquitecura
+
+  Matematicas:
+    - matematicas
+    - matematcas
+    - matesmaticas
+  
+  VIOLA:
+    - viola
+    

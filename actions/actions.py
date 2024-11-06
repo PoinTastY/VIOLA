@@ -28,23 +28,36 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-class ActionSuggestRecipes(Action):
+class ActionRecommendComponents(Action):
+
     def name(self):
-        return "action_suggest_recipes"
-    
-    def run(self, dispatcher: CollectingDispatcher, 
-            tracker: Tracker, domain: dict) -> list:
-        ingredientes = tracker.get_slot("ingredients")
+        return "action_recommend_components"
 
+    def run(self, dispatcher, tracker, domain):
+        # Obtiene la carrera del usuario
+        career = tracker.get_slot("Career") if tracker.get_slot("Career") else ""
 
-        if ingredientes is None or not ingredientes:
-            dispatcher.utter_message("No tengo recetas para esos ingredientes.")
-            return []
+        # Envía un mensaje general sobre la recomendación
+        dispatcher.utter_message(text=f"Para la carrera de {career}, recomiendo una computadora con las siguientes especificaciones...")
 
-        dispatcher.utter_message(f"Buscando recetas con los ingredientes: {', '.join(ingredientes)}")
+        # Convierte la carrera a minúsculas y la actualiza en la ranura
+        career_lower = career.lower()
 
-        if "maruchan" in ingredientes and "frijoles" in ingredientes:
-            dispatcher.utter_message("Te recomiendo una maruchan con frijoles bien insana.")
+        # Genera una respuesta específica basada en la carrera del usuario
+        if career_lower == "ingenieria de sistemas":
+            response = "Un procesador i7 o Ryzen 7 y al menos 16 GB de RAM."
+        elif career_lower == "diseño grafico":
+            response = "Es ideal una tarjeta gráfica potente y una pantalla de alta resolución."
+        elif career_lower == "ingenieria en computacion":
+            response = "Un procesador i5 o Ryzen 5 y al menos 16 GB de RAM."
+
+        elif career_lower == "cine":
+            response = "Un procesador i5 (intel), o ryzen 5 (amd), minimo 16 gb de ram, y una tarjeta grafica RTX 3060."
         else:
-            dispatcher.utter_message("No tengo recetas para esos ingredientes :c.")
+            response = """No encontre esa carrera en mi base de conocimientos, sin embargo, la composicion mas Todo Terreno, 
+seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
+
+        # Envía la recomendación específica
+        dispatcher.utter_message(text=response)
+
         return []

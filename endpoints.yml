@@ -41,4 +41,4 @@
 #  password: password
 #  queue: queue
 action_endpoint:
-  url: "http://localhost:5055/webhook"  # Asegúrate de que esta URL sea correcta
+  url: "http://localhost:5055/webhook" 
