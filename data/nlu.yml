@@ -32,6 +32,14 @@ nlu:
     - nos vemos
     - chao
 
+- intent: thank_you
+  examples: |
+    - gracias
+    - muchas gracias
+    - gracias por la informacion
+    - gracias por tu consejo
+    - te agradezco
+    - graciaaas
 
 - intent: affirm
   examples: |
@@ -72,7 +80,6 @@ nlu:
     - voy a salvar el mundo
     - extremadamente bueno
     - muy feliz
-    - gracias
 
 - intent: mood_unhappy
   examples: |
@@ -135,6 +142,19 @@ nlu:
     - [3333991900](number) es mi numero
     - mi celular es [3333991900](number)
 
+- intent: say_my_name
+  examples: |
+    - say my name
+    - di mi nombre
+    - como me llamo
+    - como me llamo yo
+
+- intent: who_is_in_paris
+  examples: |
+    - who is in paris
+    - quien esta en paris?
+    - who is in paris?
+
 - intent: how_am_i
   examples: |
     - como estas?
@@ -194,9 +214,6 @@ synonyms:
     - ingenieria computo
     - ingeniero en computacion
     - ing en computacion
-    - computacion
-    - compu
-    - hacker
 
   Ingenieria en Sistemas:
     - ingenieria en sistemas

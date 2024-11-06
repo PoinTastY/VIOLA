@@ -28,3 +28,13 @@ rules:
       - career
   steps:
   - action: action_recommend_components
+
+- rule: say your welcome 
+  steps:
+  - intent: thank_you
+  - action: utter_your_welcome
+
+- rule: who is in paris
+  steps:
+  - intent: who_is_in_paris
+  - action: utter_who_is_in_paris

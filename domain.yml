@@ -46,6 +46,9 @@ intents:
   - phone_number
   - my_name
   - inform_career
+  - say_my_name
+  - who_is_in_paris
+  - thank_you
 
 actions:
   - action_recommend_components
@@ -108,6 +111,15 @@ responses:
 
   utter_thanks:
   - text: "Gracias por proporcionar esa informacion :)"
+
+  utter_who_is_in_paris:
+  - text: "N"
+
+  utter_your_welcome:
+  - text: "Por nada, cualquier cosa que necesites, estoy a tu orden"
+  - text: "Gracias a ti, tus interacciones me ayudan a mejorar :)"
+  - text: "No es nada, estoy feliz de poder ayudarte"
+  - text: "Por nada :)"
 
 session_config:
   session_expiration_time: 60

@@ -35,7 +35,7 @@ class ActionRecommendComponents(Action):
 
     def run(self, dispatcher, tracker, domain):
         # Obtiene la carrera del usuario
-        career = tracker.get_slot("Career") if tracker.get_slot("Career") else ""
+        career = tracker.get_slot("career") if tracker.get_slot("career") else ""
 
         # Envía un mensaje general sobre la recomendación
         dispatcher.utter_message(text=f"Para la carrera de {career}, recomiendo una computadora con las siguientes especificaciones...")
