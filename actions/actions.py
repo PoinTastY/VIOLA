@@ -58,28 +58,28 @@ class ActionRecommendComponents(Action):
         carrera_universitaria : CarreraUniversitaria = self.career_components_repo.get_carrera_universitaria_by_name(carrera_universitaria_name)
         if carrera_universitaria is None:
             response = """No encontre esa carrera en mi base de conocimientos, sin embargo, la composicion mas Todo Terreno,
-            seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
+seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
 
         else:
             carrera_pc_componentes : CarreraPcComponentes = self.career_components_repo.get_carrera_pc_componentes(carrera_universitaria.id)
             if carrera_pc_componentes is None:
                 response = """No encontre esa carrera en mi base de conocimientos, sin embargo, la composicion mas Todo Terreno,
-                seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
+seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
 
             else:
                 response = f"""Para la carrera de {carrera_universitaria.nombre} se RECOMIENDA:
-                - Procesador: {carrera_pc_componentes.rec_cpu}
-                - RAM: {carrera_pc_componentes.rec_ram}
-                - Tarjeta gráfica: {carrera_pc_componentes.rec_gpu if carrera_pc_componentes.rec_gpu is not "" else "No se requiere"}
-                - Almacenamiento: {carrera_pc_componentes.rec_storage}
+- Procesador: {carrera_pc_componentes.rec_cpu}
+- RAM: {carrera_pc_componentes.rec_ram}
+- Tarjeta gráfica: {carrera_pc_componentes.rec_gpu if carrera_pc_componentes.rec_gpu is not "" else "No se requiere"}
+- Almacenamiento: {carrera_pc_componentes.rec_storage}
 
-                Como MINIMO, se recomienda:
-                - Procesador: {carrera_pc_componentes.min_cpu}
-                - RAM: {carrera_pc_componentes.min_ram}
-                - Tarjeta gráfica: {carrera_pc_componentes.min_gpu if carrera_pc_componentes.min_gpu is not "" else "No se requiere"}
-                - Almacenamiento: {carrera_pc_componentes.min_storage}
+Como MINIMO, se recomienda:
+- Procesador: {carrera_pc_componentes.min_cpu}
+- RAM: {carrera_pc_componentes.min_ram}
+- Tarjeta gráfica: {carrera_pc_componentes.min_gpu if carrera_pc_componentes.min_gpu is not "" else "No se requiere"}
+- Almacenamiento: {carrera_pc_componentes.min_storage}
 
-                {carrera_pc_componentes.recomendacion_extra if carrera_pc_componentes.recomendacion_extra is not "" else ""}
+{carrera_pc_componentes.recomendacion_extra if carrera_pc_componentes.recomendacion_extra is not "" else ""}
 """
 
         # Envía la recomendación específica
