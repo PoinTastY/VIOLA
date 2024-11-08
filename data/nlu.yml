@@ -18,6 +18,14 @@ nlu:
     - que hubo
     - como estas
     - hola VIOLA
+    - hola bot
+    - hola chatbot
+    - hola chatbot VIOLA
+    - holi
+    - hola que tal
+    - holis
+    - ola
+    - olu
 
 - intent: goodbye
   examples: |
@@ -198,7 +206,6 @@ nlu:
     - Quiero dedicarme al [Cine](career)
     - Quiero dedicarme a la [Cine](career)
 
-# IMPLEMENTAR SINONIMOS SIMPLES AQUI, PERO LAS NORMALIZACIONES, EN CODE BEHINF
 synonyms:
   Cine:
     - cine
