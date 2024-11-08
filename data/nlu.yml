@@ -39,6 +39,11 @@ nlu:
     - te veo despues
     - nos vemos
     - chao
+    - hasta la vista
+    - hasta la proxima
+    - hasta mañana
+    - hasta luego
+    - baii
 
 - intent: thank_you
   examples: |
@@ -48,6 +53,13 @@ nlu:
     - gracias por tu consejo
     - te agradezco
     - graciaaas
+    - gracias VIOLA
+    - gracias bot
+    - gracias chatbot
+    - gracias chatbot VIOLA
+    - gracias por tu ayuda
+    - gracias por tu tiempo
+    - gracias por tu atencion
 
 - intent: affirm
   examples: |
@@ -135,6 +147,13 @@ nlu:
 
 - intent: my_name
   examples: |
+    - hola soy [Kevin](name)
+    - hola soy [Carmen](name)
+    - hola soy [Collette](name)
+    - soy [Kevin](name)
+    - soy [Carmen](name)
+    - soy [Collette](name)
+    - me llamo [Kevin](name)
     - mi nombre es [Kevin](name)
     - mi nombre es [Carmen](name)
     - mi nombre es [Collette](name)
@@ -149,6 +168,10 @@ nlu:
     - [3333991900](number)
     - [3333991900](number) es mi numero
     - mi celular es [3333991900](number)
+    - mi numero es [3333991900](number)
+    - mi numero de telefono es [3333991900](number)
+    - mi numero de celular es [3333991900](number)
+    - mi numero es [3333991900](number)
 
 - intent: say_my_name
   examples: |
@@ -205,15 +228,21 @@ nlu:
     - Estudio la carrera de [Ingenieria en Computacion](career)
     - Quiero dedicarme al [Cine](career)
     - Quiero dedicarme a la [Cine](career)
-
-synonyms:
-  Cine:
+    - Quiero dedicarme a la [Ingenieria en Computacion](career)
+    - Quiero dedicarme a la [Ingenieria en Sistemas](career)
+    - Quiero estudiar [Finanzas](career)
+    - Quiero estudiar [Derecho](career)
+      
+- synonym: Cine
+  examples: |
     - cine
     - sine
     - industria del cine
     - cineasta
+    - chine
 
-  Ingenieria en Computacion:
+- synonym: Ingenieria en Computacion
+  examples: |
     - ingenieria en computacion
     - ingenieria en computo
     - ingenieria de computo
@@ -222,7 +251,8 @@ synonyms:
     - ingeniero en computacion
     - ing en computacion
 
-  Ingenieria en Sistemas:
+- synonym:  Ingenieria en Sistemas
+  examples: |
     - ingenieria en sistemas
     - ingenieria de sistemas
     - sistemas
@@ -238,7 +268,8 @@ synonyms:
     - sistems computacionales
     - Sistemas
 
-  Diseño Grafico:
+- synonym: Diseño Grafico
+  examples: |
     - diseño grafico
     - diseno grafico
     - diseño grafic
@@ -247,14 +278,16 @@ synonyms:
     - diseño graficos
     - diseno graficos
 
-  Medicina:
+- synonym: Medicina
+  examples: |
     - medicina
     - medicna
     - medcina
     - mediicina
     - medcina
 
-  Economia:
+- synonym: Economia
+  examples: |
     - economia
     - economía
     - econmia
@@ -262,18 +295,17 @@ synonyms:
     - ecónomia
     - ecnoomia
 
-  Arquitectura:
+- synonym: Arquitectura
+  examples: |
     - arquitectura
     - arqutiectura
     - arqiutectura
     - arquitctura
     - arquitecura
 
-  Matematicas:
+- synonym: Matematicas
+  examples: |
     - matematicas
     - matematcas
     - matesmaticas
-  
-  VIOLA:
-    - viola
     
