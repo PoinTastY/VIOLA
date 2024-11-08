@@ -140,12 +140,43 @@ class CareerComponentsRepo:
         # Confirmar la transacción
         self.conn.commit()
 
+    def update_carrera_universitaria(self, carrera: CarreraUniversitaria) -> None:
+            
+            # Verificar si la carrera ya existe
+            carrera_existente = self.get_carrera_universitaria_by_name(carrera.nombre)
+            if carrera_existente is None:
+                raise Exception("La carrera para editar no existe en la base de datos")
+    
+            # Actualizar los datos de la carrera
+            self.cursor.execute(""" 
+                UPDATE carrera_universitaria
+                SET area = %s, duracion = %s
+                WHERE nombre = %s
+            """, (carrera.area, carrera.duracion, carrera.nombre))
+            
+            # Confirmar la transacción
+            self.conn.commit()
+
+    def add_synonym(self, raw_string: str, real_word: str, table_name : str, column_name : str) -> None:
+        # si ya existe raw_string en la base de datos, no hacer nada
+        self.cursor.execute("""SELECT * FROM synonyms WHERE raw_string = %s""", (raw_string,))
+        if self.cursor.fetchone():
+            print(f"Se omitio la insercion del sinonimo: {raw_string} porque ya existe en la base de datos")
+            return
+        
+        self.cursor.execute("""
+            INSERT INTO synonyms (raw_string, real_word, table_name, column_name)
+            VALUES (%s, %s, %s, %s)
+        """, (raw_string, real_word, table_name, column_name))
+
+        self.conn.commit()
 
     def save_carrera_universitaria(self, carrera: CarreraUniversitaria) -> CarreraUniversitaria:
 
         # Verificar si la carrera ya existe
         carrera_existente = self.get_carrera_universitaria_by_name(carrera.nombre)
         if carrera_existente is not None:
+            self.update_carrera_universitaria(carrera)
             return carrera_existente
 
         # Insertar la carrera en la base de datos
