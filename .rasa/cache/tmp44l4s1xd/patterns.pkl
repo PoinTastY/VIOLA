@@ -1,0 +1,14 @@
+[
+  {
+    "name": "career_study",
+    "pattern": "Estudio (Ingeniería en|Ciencias de|Licenciatura en) [a-zA-Z\\s]+"
+  },
+  {
+    "name": "career_want",
+    "pattern": "Quiero estudiar (medicina|derecho|biología|arquitectura)"
+  },
+  {
+    "name": "career_want",
+    "pattern": "Quiero ser (ingeniero|doctor|profesor|diseñador|economista)"
+  }
+]

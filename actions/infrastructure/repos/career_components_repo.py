@@ -161,7 +161,6 @@ class CareerComponentsRepo:
         # si ya existe raw_string en la base de datos, no hacer nada
         self.cursor.execute("""SELECT * FROM synonyms WHERE raw_string = %s""", (raw_string,))
         if self.cursor.fetchone():
-            print(f"Se omitio la insercion del sinonimo: {raw_string} porque ya existe en la base de datos")
             return
         
         self.cursor.execute("""

@@ -54,7 +54,27 @@ stories:
 
 - story: El usuario menciona su carrera
   steps:
+  - intent: greet
+  - action: utter_greet
   - intent: inform_career
   - slot_was_set:
     - career: "Ingenieria de Sistemas"
+  - action: action_recommend_components
+
+- story: El usuario menciona su carrera 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform_career
+  - slot_was_set:
+    - career: "Medicina"
+  - action: action_recommend_components
+
+- story: El usuario menciona su carrera 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform_career
+  - slot_was_set:
+    - career: "Cine"
   - action: action_recommend_components

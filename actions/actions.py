@@ -70,16 +70,16 @@ seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y
                 response = f"""Para la carrera de {carrera_universitaria.nombre} se RECOMIENDA:
 - Procesador: {carrera_pc_componentes.rec_cpu}
 - RAM: {carrera_pc_componentes.rec_ram}
-- Tarjeta gráfica: {carrera_pc_componentes.rec_gpu if carrera_pc_componentes.rec_gpu is not "" else "No se requiere"}
-- Almacenamiento: {carrera_pc_componentes.rec_storage}
+- Tarjeta gráfica minima: {carrera_pc_componentes.rec_gpu if carrera_pc_componentes.rec_gpu != "" else "No se requiere"}
+- Almacenamiento minimo: {carrera_pc_componentes.rec_storage}
 
 Como MINIMO, se recomienda:
 - Procesador: {carrera_pc_componentes.min_cpu}
 - RAM: {carrera_pc_componentes.min_ram}
-- Tarjeta gráfica: {carrera_pc_componentes.min_gpu if carrera_pc_componentes.min_gpu is not "" else "No se requiere"}
-- Almacenamiento: {carrera_pc_componentes.min_storage}
+- Tarjeta gráfica recomendada: {carrera_pc_componentes.min_gpu if carrera_pc_componentes.min_gpu != "" else "No se requiere"}
+- Almacenamiento recomendado: {carrera_pc_componentes.min_storage}
 
-{carrera_pc_componentes.recomendacion_extra if carrera_pc_componentes.recomendacion_extra is not "" else ""}
+{carrera_pc_componentes.recomendacion_extra if carrera_pc_componentes.recomendacion_extra != "" else ""}
 """
 
         # Envía la recomendación específica

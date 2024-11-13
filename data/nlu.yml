@@ -199,46 +199,31 @@ nlu:
 
 - intent: inform_career
   examples: |
-    - Estudio [Ingenieria en Sistemas](career)
-    - Estudio [Ingenieria en Informatica](career)
-    - Estudio [Ingenieria de Software](career)
-    - Estudio [Ingenieria en Computacion](career)
-    - Estudio [Ingenieria en Telecomunicaciones](career)
-    - Estoy estudiando [Ingenieria en Telecomunicaciones](career)
-    - Quiero estudiar [Diseño Grafico](career)
-    - Quiero estudiar [Diseño Grafico](career)
-    - Quiero estudiar [Cine](career)
-    - quiero estudiar [Cine](career)
-    - quiero ser [Cine](career)
-    - Mi carrera es [Arquitectura](career)
-    - Soy estudiante de [Medicina](career)
-    - Estudio [Economia](career)
-    - Estoy cursando [Psicologia](career)
-    - Tengo la carrera de [Odontologia](career)
-    - Estoy cursando [Economia](career)
-    - Soy Licenciado en [Administracion de empresas](career)
-    - Tengo una licenciatura en [Ingenieria en sistemas](career)
-    - Estudio Licenciatura en [Matematicas](career)
-    - Quiero estudiar [Gastronomia](career)
-    - Quiero ser [Oftanmologo](career)
-    - Quiero ser [Fisico](career)
-    - Quiero estudiar [Cine](career)
-    - Quiero ser [Cine](career)
-    - Quiero ser [Ingenieria en Computacion](career)
-    - Estudio la carrera de [Ingenieria en Computacion](career)
+    - Estudio [Ingeniería en Sistemas](career)
+    - Estoy estudiando [Ingeniería en Computación](career)
+    - Quiero estudiar [Diseño Gráfico](career)
     - Quiero dedicarme al [Cine](career)
-    - Quiero dedicarme a la [Cine](career)
-    - Quiero dedicarme a la [Ingenieria en Computacion](career)
-    - Quiero dedicarme a la [Ingenieria en Sistemas](career)
+    - Soy estudiante de [Medicina](career)
+    - Tengo una licenciatura en [Matemáticas](career)
+    - Mi carrera es [Arquitectura](career)
+    - Quiero ser [Ingeniero en Computación](career)
+    - Quiero estudiar [Economía](career)
+    - Estoy cursando [Psicología](career)
+    - Tengo una licenciatura en [Administración de Empresas](career)
+    - Quiero ser [Doctor](career)
+    - Quiero hacer [Política](career)
+    - Soy estudiante de [Derecho](career)
+    - Quiero estudiar [Biología](career)
+    - Quiero estudiar [Gastronomía](career)
+    - Me gustaría estudiar [Física](career)
+    - Estoy cursando una licenciatura en [Odontología](career)
+    - Quiero ser [Profesor](career)
+    - Quiero ser [Economista](career)
+    - Me gustaría ser [Diseñador Gráfico](career)
+    - Quiero dedicarme a la [Medicina](career)
+    - quiero ser [medico]{"entity": "career", "value": "medico"}
+    - Me interesa estudiar [Ingeniería en Telecomunicaciones](career)
     - Quiero estudiar [Finanzas](career)
-    - Quiero estudiar [Derecho](career)
-    - Quiero estudiar [chine](career)
-    - Quiero ser [cineasta](career)
-    - Quiero ser [ingeniero en computacion](career)
-    - Quiero ser [ingeniero en sistemas](career)
-    - Quiero ser [diseñador grafico](career)
-    - Quiero ser [medico](career)
-    - quiero estudiar [diseno grafico](career)
       
 - synonym: Cine
   examples: |
@@ -292,6 +277,11 @@ nlu:
     - medcina
     - mediicina
     - medcina
+    - medcina
+    - medico
+    - doctor
+    - dr
+    - cirujano
 
 - synonym: Economia
   examples: |

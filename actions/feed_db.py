@@ -31,15 +31,15 @@ if __name__ == '__main__':
                 # Crear instancia de CarreraPcComponentes usando los datos de la fila
                 carrera_pc_componentes = CarreraPcComponentes(
                     id_carrera=carrera_universitaria.id,
-                    min_cpu=row['min_cpu'],
-                    rec_cpu=row['rec_cpu'],
-                    min_ram=row['min_ram'],
-                    rec_ram=row['rec_ram'],
-                    min_storage=row['min_storage'],
-                    rec_storage=row['rec_storage'],
-                    min_gpu=row['min_graphic'],
-                    rec_gpu=row['rec_graphic'],
-                    recomendacion_extra=row['recomendacion_extra'] if 'recomendacion_extra' in row else ""
+                    min_cpu=row['min_cpu'] if pd.notna(row['min_cpu']) else "",
+                    rec_cpu=row['rec_cpu'] if pd.notna(row['rec_cpu']) else "",
+                    min_ram=row['min_ram'] if pd.notna(row['min_ram']) else "",
+                    rec_ram=row['rec_ram'] if pd.notna(row['rec_ram']) else "",
+                    min_storage=row['min_storage'] if pd.notna(row['min_storage']) else "",
+                    rec_storage=row['rec_storage'] if pd.notna(row['rec_storage']) else "",
+                    min_gpu=row['min_graphic'] if pd.notna(row['min_graphic']) else "",
+                    rec_gpu=row['rec_graphic'] if pd.notna(row['rec_graphic']) else "",
+                    recomendacion_extra=row['recomendacion_extra'] if 'recomendacion_extra' in row and pd.notna(row['recomendacion_extra']) else ""
                 )
                 
                 # Guardar componentes de la carrera
