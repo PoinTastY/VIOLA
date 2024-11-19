@@ -110,3 +110,16 @@ stories:
       define belleza
     intent: prettiest
   - action: utter_prettiest
+
+- story: El usuario menciona su carrera
+  steps:
+  - user: |
+      hola
+    intent: greet
+  - action: utter_greet
+  - user: |
+      quiero estudiar computacion
+    intent: inform_career
+  - slot_was_set:
+    - career: "computacion"
+  - action: action_recommend_components

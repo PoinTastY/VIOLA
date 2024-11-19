@@ -26,6 +26,8 @@ nlu:
     - holis
     - ola
     - olu
+    - heeeeeeey
+    - hey
 
 - intent: goodbye
   examples: |
@@ -224,6 +226,9 @@ nlu:
     - quiero ser [medico]{"entity": "career", "value": "medico"}
     - Me interesa estudiar [Ingeniería en Telecomunicaciones](career)
     - Quiero estudiar [Finanzas](career)
+    - quiero estudiar [computacion](career)
+    - quiero estudiar [sistemas](career)
+    - estudio [computacion](career)
       
 - synonym: Cine
   examples: |
@@ -242,6 +247,9 @@ nlu:
     - ingenieria computo
     - ingeniero en computacion
     - ing en computacion
+    - computacion
+    - computo
+    - compu
 
 - synonym:  Ingenieria en Sistemas
   examples: |
