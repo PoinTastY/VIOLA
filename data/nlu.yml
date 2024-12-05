@@ -229,6 +229,25 @@ nlu:
     - quiero estudiar [computacion](career)
     - quiero estudiar [sistemas](career)
     - estudio [computacion](career)
+    - Estudio [Ingeniería](career)
+    - Estoy estudiando [Medicina](career)
+    - Quiero estudiar [Diseño Gráfico](career)
+    - Quiero dedicarme al [Cine](career)
+    - Soy estudiante de [Psicología](career)
+    - Quiero ser [Economista](career)
+    - Quiero estudiar [Física](career)
+    - Estoy cursando [Derecho](career)
+    - Quiero ser [Médico](career)
+    - quiero estudiar [computación](career)
+    - Me interesa [Enfermería](career)
+    - quiero estudiar [diseno igrafco](career)
+    - [diseno grafico](career)
+    - [medicina](career)
+    - [Computacion](career)
+    - [Ingenieria en Sistemas](career)
+    - [Ingenieria en Computacion](career)
+    - [Diseño Grafico](career)
+    - [Cine](career)
       
 - synonym: Cine
   examples: |
@@ -268,7 +287,7 @@ nlu:
     - sistems computacionales
     - Sistemas
 
-- synonym: Diseño Grafico
+- synonym: Licenciatura en Diseño Grafico
   examples: |
     - diseño grafico
     - diseno grafico
@@ -278,7 +297,7 @@ nlu:
     - diseño graficos
     - diseno graficos
 
-- synonym: Medicina
+- synonym: Licenciatura en Medicina
   examples: |
     - medicina
     - medicna

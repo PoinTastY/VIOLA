@@ -1,9 +1,14 @@
 version: "3.1"
 
+entities:
+  - career
+  - name
+  - number
+
 slots:
   career:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: career
@@ -22,11 +27,6 @@ slots:
       - type: from_entity
         entity: number
     
-
-entities:
-  - career
-  - name
-  - number
 
 intents:
   - greet
@@ -120,6 +120,12 @@ responses:
   - text: "Gracias a ti, tus interacciones me ayudan a mejorar :)"
   - text: "No es nada, estoy feliz de poder ayudarte"
   - text: "Por nada :)"
+
+  utter_ask_career:
+  - text: "Que carrera estas estudiando?"
+  - text: "En que carrera estas?"
+  - text: "Que carrera quieres estudiar?"
+  - text: "Que carrera te gustaria estudiar?"
 
 session_config:
   session_expiration_time: 60

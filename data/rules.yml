@@ -38,3 +38,19 @@ rules:
   steps:
   - intent: who_is_in_paris
   - action: utter_who_is_in_paris
+
+# - rule: activate career form
+#   steps:
+#   - intent: inform_career
+#   - action: career_form
+#   - active_loop: career_form
+
+# - rule: Submit career form
+#   condition:
+#   - active_loop: career_form
+#   steps:
+#   - action: career_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recommend_components

@@ -25,7 +25,7 @@ class CareerComponentsRepo:
         result = self.cursor.fetchone()
 
         if result:
-            return result[0] if result else sting_attempt
+            return result[0] if result else None
         
     def get_carrera_pc_componentes(self, id_carrera: int) -> CarreraPcComponentes:
         # Consulta SQL para obtener los datos usando el id_carrera

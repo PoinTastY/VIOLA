@@ -25,12 +25,56 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+
+from typing import Any, Text, Dict, List, Union
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet, EventType
 
 from actions.infrastructure.repos.career_components_repo import CareerComponentsRepo
 from actions.domain.entities.carrera_pc_componentes import CarreraPcComponentes
 from actions.domain.entities.carrera_universitaria import CarreraUniversitaria
+
+
+# class ValidateCareerForm(Action):
+#     #create repository instance on builder
+#     def __init__(self):
+#         #call the parent constructor
+#         super().__init__()
+
+#         #create a new instance of the CareerComponentsRepo
+#         self.career_components_repo = CareerComponentsRepo()
+
+#     def name(self):
+#         return "career_form"
+    
+#     def run(self, dispatcher, tracker, domain) -> List[EventType]:
+
+#         print("Running career_form action")
+
+#         required_slots = ["career"]
+
+#         for slot_name in required_slots:
+#             if tracker.slots.get(slot_name) is None:
+
+#                 user_entry_splitted = self.iterate_text_words(tracker.latest_message.text)
+
+#                 for word in user_entry_splitted:
+#                     search_result = self.career_components_repo.search_synonym(word)
+#                     if search_result:
+#                         print(f"Found career: {search_result}")
+#                         return [SlotSet(slot_name, search_result)]
+
+#                 print(f"Splitted words: {user_entry_splitted}")
+
+#                 return [SlotSet("requested_slot", slot_name)]
+            
+#         return [SlotSet("requested_slot", None)]
+    
+#     def iterate_text_words(self, text: str):
+#         print("Splitting entry: ", text)
+#         return text.split(" ")
 
 class ActionRecommendComponents(Action):
     #create repository instance on builder
@@ -47,9 +91,27 @@ class ActionRecommendComponents(Action):
 
     def run(self, dispatcher, tracker, domain):
         # Obtiene la carrera del usuario
-        career_from_user = tracker.get_slot("career") if tracker.get_slot("career") else ""
+        career_from_user = tracker.get_slot("career")
 
-        carrera_universitaria_name = self.career_components_repo.search_synonym(career_from_user)
+        print(tracker.latest_message)
+
+        if career_from_user is None:
+            user_entry_splitted = self.iterate_text_words(tracker.latest_message.get("text"))
+
+            for word in reversed(user_entry_splitted):
+                search_result = self.career_components_repo.search_synonym(word)
+                if search_result:
+                    print(f"Found career: {search_result}")
+                    career_from_user = search_result
+                    break
+
+        carrera_universitaria_name = career_from_user
+
+        if carrera_universitaria_name is None: # Si no se encuentra la carrera, se envía un mensaje general
+            response = """No encontre esa carrera en mi base de conocimientos, sin embargo, la composicion mas Todo Terreno,
+seria un procesador superior a Intel Core I3, o Ryzen 3 para amd, 8 GB de ram, y un disco duro ssd con al menos 240 gb :) """ 
+            dispatcher.utter_message(text=response)
+            return []
 
         # Envía un mensaje general sobre la recomendación
         dispatcher.utter_message(text=f"Dame un momento para buscar las recomendaciones para la carrera: {carrera_universitaria_name}...")
@@ -86,3 +148,7 @@ Como MINIMO, se recomienda:
         dispatcher.utter_message(text=response)
 
         return []
+    
+    def iterate_text_words(self, text: str):
+        print("Splitting entry: ", text)
+        return text.split(" ")
